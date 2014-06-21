@@ -27,11 +27,11 @@
  * other configuration you may need to do for the newly deployed code.
  */
 $repos = array(
-	/*'examplerepo' => array(
+	'vimes' => array(
 		'branch' => 'master',
 		'remote' => 'origin',
-		'path' => '/path/to/local/code/'
-	)*/
+		'path' => '/home/wp_dztuu2/blairmacintyre.me/wp-content/themes/vimes'
+	)
 );
 
 /**

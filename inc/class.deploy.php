@@ -177,10 +177,22 @@ abstract class Deploy {
 			chdir( $this->_path);
 
 			// Discard any changes to tracked files since our last deploy
+			$this->log( '[git reset outout: ');
 			exec( 'git reset --hard HEAD', $output );
 
+			foreach($output as $val) {
+				$this->log(' reset: ' . $val );
+			}
+			$this->log(']');
+
 			// Update the local repository
+			$this->log( '[git pull outout: ');
 			exec( 'git pull ' . $this->_remote . ' ' . $this->_branch, $output );
+
+			foreach($output as $val) {
+				$this->log(' pull: ' . $val );
+			}
+			$this->log(']');
 
 			// Secure the .git directory
 			echo exec( 'chmod -R og-rx .git' );
